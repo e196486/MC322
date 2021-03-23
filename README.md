@@ -3,3 +3,4 @@
   
 ## Curso 
   * Engenharia de Controle e Automação (ECA)
+  * Disciplina MC 322
