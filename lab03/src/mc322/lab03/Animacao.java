@@ -4,13 +4,20 @@ public class Animacao {
 	AquarioLombriga aquario; 
 	char Comando;
 	
-    public Animacao(String Sequencia, AquarioLombriga aquario) {
-        this.aquario = aquario;
+    public Animacao(String Sequencia) {
+    	
+    	int AA  = Integer.parseInt(Sequencia.substring(0,2));  
+    	int LL = Integer.parseInt(Sequencia.substring(2,4));  
+    	int PP = Integer.parseInt(Sequencia.substring(4,6)); 
+  
+        this.aquario = new AquarioLombriga(AA,LL,PP); 
+        
         int TamanhoSequencia = Sequencia.length();
         
         for (int i=1; i<TamanhoSequencia;i++) {
         	this.Comando = Sequencia.charAt(i); 
         	this.passo(Comando);
+            System.out.println(this.apresenta()); 
         }
 
     }

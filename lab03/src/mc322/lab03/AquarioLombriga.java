@@ -20,18 +20,14 @@ public class AquarioLombriga {
     	this.TamanhoLombriga =  TamanhoLombriga;  
     	this.PosicaoLombriga =  PosicaoLombriga;
     	this.Lado = true; 
-       
-    	this.Lombriga = this.apresenta();
-    	System.out.println(this.Lombriga); 
+        
     }
     public void crescer(){ //se tem espaço, cresce na direção oposta a cabeça
         if (TamanhoLombriga<TamanhoAquario) {
         	this.TamanhoLombriga++;
         	if(this.Lado)
         		this.PosicaoLombriga--;
-        }
-        this.Lombriga = this.apresenta();
-    	System.out.println(this.Lombriga); 
+        } 
     }
     
     public void  mover() { //Vai para o lado da cabeça se tiver espaço 
@@ -41,19 +37,13 @@ public class AquarioLombriga {
     	}else if (!this.Lado && PosicaoLombriga>1) {
     		PosicaoLombriga --;
     	}
-    	
-    	this.Lombriga = this.apresenta();
-    	System.out.println(this.Lombriga); 
+    	 
     }
     
     public void  virar() { //Vira de lado
-    	if(this.Lado) {
-    		this.Lado = false;
-    	}else {
-    		this.Lado = true;
-    	}
-    	this.Lombriga = this.apresenta();
-    	System.out.println(this.Lombriga); 
+    	
+    	this.Lado = this.Lado ? false : true;
+    	 
     }
     
     public String apresenta() { // retorna uma String contendo a apresentação da lombriga no aquário no estado atual,
