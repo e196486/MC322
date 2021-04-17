@@ -7,12 +7,15 @@ public class AppRestaUm {
 
 		CSVReader csv = new CSVReader();
 		csv.setDataSource(s);
-		String commands[] = csv.requestCommands();
+		String commands[] = csv.requestCommands(); 
 
 		// declaro meu jogo aberto
 		Tabuleiro Tabuleiro1 = new Tabuleiro();
 
-		for (int i = 0; i < commands.length; i++) {
+		for (int i = 0; i < commands.length; i++) { 
+			commands[i] = commands[i].replace("{","");
+			commands[i] = commands[i].replace("}","");
+			commands[i] = commands[i].replace(" ",""); 
 			Tabuleiro1.movePeca(commands[i].substring(1, 3), commands[i].substring(4, 6));
 			EstadoTabuleiro = Tabuleiro1.desenhaTabuleiro();
 		}
